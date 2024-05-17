@@ -44,10 +44,13 @@
 
   <body>
     <!--Navigator Bar-->
-    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" id="navbar">
+    <nav class="navbar fixed-top navbar-expand-lg" id="navbar">
       <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><div class="rectangle"></div>
+        </a>
         <button
-          class="navbar-toggler" 
+          class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
@@ -96,7 +99,9 @@
     </div>
 
     <!-- List Cars Filtered -->
+  <div class="search-page">
     <section id="filter-cars-section" class="filter-cars-section">
+        <form id="search--form">
         <div
             class="filter-cars align-items-center d-flex justify-content-center container gap-3 rounded"
         >
@@ -104,29 +109,29 @@
                 
                 <!-- Type Driver -->
                 <div style="max-width:25%;">
-                    <div class="form-input">
-                        <label class="mb-2">Tipe Driver</label>
-                        <select class="form-select select2" data-placeholder="Pilih Tipe Driver" id="type-driver">
-                            <option value=""></option>
-                            <option value="dengan-sopir">Dengan Sopir</option>
-                            <option value="tanpa-sopir">Tanpa Sopir (Lepas Kunci)</option>
+                    <div class="form-group">
+                        <label for="driver-type" class="mb-2">Tipe Driver</label>
+                        <select class="form-select select2" placeholder="Pilih Tipe Driver" id="driver-type" name="driver-type">
+                            <option value="" disabled selected>Pilih Tipe Driver</option>
+                            <option value="with-driver">Dengan Sopir</option>
+                            <option value="without-driver">Tanpa Sopir (Lepas Kunci)</option>
                         </select>
                     </div>
                 </div>
 
                 <!-- Date -->
                 <div style="max-width:25%;">
-                    <div class="form-input">
-                        <label class="mb-2">Tanggal</label>
-                        <input type="date" class="form-control" id="set-date" />
+                    <div class="form-group">
+                        <label for="date" class="mb-2">Tanggal</label>
+                        <input type="date" class="form-control" id="date" name="date" placeholder="Pilih Waktu" required>
                     </div>
                 </div>
 
                 <!-- Time -->
                 <div style="width:30%;">
-                  <div class="form-input">
-                      <label class="mb-2">Waktu Jemput / Ambil</label>
-                      <select class="form-select select2" data-placeholder="Pilih Waktu" id="set-time">
+                  <div class="form-group">
+                      <label for="time" class="mb-2">Waktu Jemput / Ambil</label>
+                      <select type="time" class="form-select select2" placeholder="Pilih Waktu" id="time" name="time" required>
                           <option></option>
                           <option value="08:00:00">08.00 WIB</option>
                           <option value="09:00:00">09.00 WIB</option>
@@ -139,17 +144,18 @@
 
                 <!-- Passenger -->
                 <div>
-                    <div class="form-input">
+                    <div class="form-group">
                         <label for="passengers" class="mb-2">Jumlah Penumpang (Optional)</label>
-                        <input type="number" class="form-control" id="set-passenger" min="1"/>
+                        <input type="number" class="form-control" id="passengers" name="passengers" placeholder="Jumlah Penumpang" min="1"/>
                     </div>
                 </div>
             </div>
             <button type="search" class="btn btn-outline-success me-2" id="search-cars-btn">Cari Mobil</button>
         </div>
+      </form>
     </section>
-
-    <div id="row-cars" class="container row"></div>
+  </div>
+    <div id="car-results" class="container row"></div>
 
     <!--Footer-->
     <footer>
@@ -233,10 +239,10 @@
 
 
     
-    <script type="text/javascript" src="./scripts/binar.js"></script>
-    <script type="text/javascript" src="./scripts/app.example.js"></script>
-    <script type="text/javascript" src="./scripts/car.example.js"></script>
-    <script type="text/javascript" src="./scripts/main.example.js"></script>
+    <script type="text/javascript" src="/scripts/binar.js"></script>
+    <script type="text/javascript" src="/scripts/app.example.js"></script>
+    <script type="text/javascript" src="/scripts/car.example.js"></script>
+    <script type="text/javascript" src="/scripts/main.example.js"></script>
    
   </body>
 </html>
