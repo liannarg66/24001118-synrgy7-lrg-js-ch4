@@ -134,6 +134,7 @@ h1 {
   }
 }
 
+
 .btn-success {
   background-color: var(--primary-limegreen04) !important;
   padding: 8px 12px !important;
@@ -153,3 +154,38 @@ h1 {
   transform: translate(0%, -50%);
   box-shadow: 0px 0px 9px 1px rgba(181, 179, 179, 0.75);
 }
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  margin-right: 20px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#car-results {
+  margin-top: 20px;
+}
+
