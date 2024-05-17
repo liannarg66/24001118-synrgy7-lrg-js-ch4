@@ -47,7 +47,7 @@
     <nav class="navbar fixed-top navbar-expand-lg" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
-          ><img src="Assets/Binar.svg" alt="" />
+          ><div class="rectangle"></div>
         </a>
         <button
           class="navbar-toggler"
@@ -86,9 +86,7 @@
           terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
           untuk sewa mobil selama 24 jam.
         </p>
-          <a href="\cars">
-            <button type="button" class="btn btn-success" id="searchCarsBtn">Mulai Sewa Mobil</button></a>
-        <!--<button type="button" id= "button" class="btn btn-success">Mulai Sewa Mobil</button>-->
+            <button type="button" class="btn btn-success" id="search-cars-button">Mulai Sewa Mobil</button>
       </div>
       <div class="col-md-6" id="mobil">
         <img
@@ -588,16 +586,15 @@
       function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
       }
-      
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
       }
     </script>
 
-
-
-    <script src="/index.js"></script>
-    <script src="./scripts/car.example.js"></script>
-    
+  <script>
+    document.getElementById('search-cars-button').onclick = function() {
+      window.location.href = '/cars';
+    }
+  </script>
   </body>
 </html>
