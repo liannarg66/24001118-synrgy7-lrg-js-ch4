@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs').promises;
 const path = require('path');
 
-const port = 8898;
+const port = 8888;
 
 const server = http.createServer(async (req, res) => {
   try {
@@ -11,8 +11,18 @@ const server = http.createServer(async (req, res) => {
       filePath = path.join(__dirname, '../public/index.html');
     } else if (req.url === '/cars') {
       filePath = path.join(__dirname, '../public/cariMobil.html');
-    } else if (req.url === '/styles.css') {
+    } else if (req.url === '/css/styles.css') {
       filePath = path.join(__dirname, '../public/css/styles.css');
+    } else if (req.url === '/scripts/binar.js') {
+      filePath = path.join(__dirname, '../public/scripts/binar.js');
+    } else if (req.url === '/scripts/app.example.js') {
+      filePath = path.join(__dirname, '../public/scripts/app.example.js');
+    } else if (req.url === '/scripts/car.example.js') {
+      filePath = path.join(__dirname, '../public/scripts/car.example.js');
+    } else if (req.url === '/scripts/main.example.js') {
+      filePath = path.join(__dirname, '../public/scripts/main.example.js');
+    } else if (req.url === '/scripts/binar.js') {
+      filePath = path.join(__dirname, '../public/scripts/binar.js');
     } else if (req.url === '/script.js') {
       filePath = path.join(__dirname, 'script.js');
     } else {
@@ -49,7 +59,6 @@ function getContentType(filePath) {
       return 'application/octet-stream';
   }
 }
-
 
 server.listen(port, 'localhost', () => {
   console.log(`Server running at http://localhost:${port}/`);
